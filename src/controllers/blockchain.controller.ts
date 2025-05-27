@@ -110,15 +110,6 @@ export class BlockchainController {
       const { id } = req.params;
       const { isActive }: ToggleBlockchainRequestDto = req.body;
 
-      // @ToDo vs maybe use validation here so we can have unified error responses
-      // if (!id) {
-      //   throw new ValidationError('Blockchain ID is required');
-      // }
-      //
-      // if (typeof isActive !== 'boolean') {
-      //   throw new ValidationError('isActive must be a boolean');
-      // }
-
       console.log(`${isActive ? 'Enabling' : 'Disabling'} blockchain: ${id}`);
 
       const blockchain = await BlockchainService.toggleActive(id, isActive);
@@ -147,15 +138,6 @@ export class BlockchainController {
     try {
       const { id } = req.params;
       const { scanEnabled }: ToggleScanningRequestDto = req.body;
-
-      // @ToDo vs think of returning this and removing that stuff from router...
-      // if (!id) {
-      //   throw new ValidationError('Blockchain ID is required');
-      // }
-      //
-      // if (typeof scanEnabled !== 'boolean') {
-      //   throw new ValidationError('scanEnabled must be a boolean');
-      // }
 
       console.log(`${scanEnabled ? 'Enabling' : 'Disabling'} scanning for blockchain: ${id}`);
 

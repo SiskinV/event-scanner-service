@@ -3,7 +3,6 @@ import { AppError } from './app-error';
 import { ErrorCode } from './error-code';
 
 export class BlockchainNotFound extends AppError {
-  // @ToDo vs think about this, don't like it
   constructor(blockchainId?: string, chainId?: number) {
     super(
       chainId

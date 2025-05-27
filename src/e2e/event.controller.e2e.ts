@@ -241,7 +241,6 @@ describe('EventsController Integration Tests', () => {
       });
     });
 
-    // @ToDo vs maybe not needed
     describe('Filtering', () => {
       beforeEach(async () => {
         // Create events with different properties for filtering
