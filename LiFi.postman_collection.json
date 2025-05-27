@@ -1,0 +1,990 @@
+{
+	"info": {
+		"_postman_id": "fb68edb5-1466-4f2b-be0a-993ff2aaaf77",
+		"name": "LiFi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Scanner",
+			"item": [
+				{
+					"name": "Start scanner",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"chainId\": 137\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/scanner/start",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"scanner",
+								"start"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Stop scanner",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"chainId\": \"137\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/scanner/stop",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"scanner",
+								"stop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get status of scanners",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/scanner/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"scanner",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Scan block range",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Blockchains",
+			"item": [
+				{
+					"name": "Get all blockchains",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/blockchains/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"blockchains",
+								"all"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get all blockchains",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/blockchains/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"blockchains",
+										"all"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "391"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"187-TqCNgb1LUDxd4XdECKKBdJaawBM\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 May 2025 22:33:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"All blockchains retrieved successfully\",\n    \"data\": {\n        \"blockchains\": [\n            {\n                \"id\": \"7ceb9d3f-4f47-4b2a-b163-0f711209a287\",\n                \"blockchainId\": \"27e724b3-958c-4e4a-b5bb-728863d0957e\",\n                \"rpcUrl\": \"https://polygon-rpc.com\",\n                \"name\": \"Polygon Mainnet\",\n                \"chainId\": 137,\n                \"symbol\": \"POL\",\n                \"nativeCurrency\": \"POL\",\n                \"blockExplorer\": \"https://polygonscan.com\",\n                \"isActive\": true,\n                \"scanEnabled\": true\n            }\n        ],\n        \"total\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create new blockchain",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"blockchainId\": \"27e724b3-958c-4e4a-b5bb-728863d0957e\",\r\n    \"name\": \"Polygon Mainnet\",\r\n    \"chainId\": 137,\r\n    \"rpcUrl\": \"https://polygon-rpc.com\",\r\n    \"blockExplorer\": \"https://polygonscan.com\",\r\n    \"contractAddress\": \"0xbD6C7B0d2f68c2b7805d88388319cfB6EcB50eA9\",\r\n    \"nativeCurrency\": \"POL\",\r\n    \"symbol\": \"POL\",\r\n    \"decimals\": 18\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/blockchains/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"blockchains",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create new blockchain",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"blockchainId\": \"27e724b3-958c-4e4a-b5bb-728863d0957e\",\r\n    \"name\": \"Polygon Mainnet\",\r\n    \"chainId\": 137,\r\n    \"rpcUrl\": \"https://polygon-rpc.com\",\r\n    \"blockExplorer\": \"https://polygonscan.com\",\r\n    \"contractAddress\": \"0xbD6C7B0d2f68c2b7805d88388319cfB6EcB50eA9\",\r\n    \"nativeCurrency\": \"POL\",\r\n    \"symbol\": \"POL\",\r\n    \"decimals\": 18\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/blockchains/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"blockchains",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "526"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"20e-7qKNQYIf2r8Irw0T4ymHYVwaffs\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 May 2025 22:33:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Blockchain Polygon Mainnet added successfully\",\n    \"data\": {\n        \"id\": \"d650d72f-2689-420d-9d7b-209e97597333\",\n        \"blockchainId\": \"27e724b3-958c-4e4a-b5bb-728863d0957e\",\n        \"name\": \"Polygon Mainnet\",\n        \"chainId\": 137,\n        \"rpcUrl\": \"https://polygon-rpc.com\",\n        \"contractAddress\": \"0xbD6C7B0d2f68c2b7805d88388319cfB6EcB50eA9\",\n        \"blockExplorer\": \"https://polygonscan.com\",\n        \"nativeCurrency\": \"POL\",\n        \"symbol\": \"POL\",\n        \"decimals\": 18,\n        \"isActive\": true,\n        \"scanEnabled\": false,\n        \"createdAt\": \"2025-05-26T22:33:31.382Z\",\n        \"updatedAt\": \"2025-05-26T22:33:31.382Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get blockchain by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/blockchains/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"blockchains",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "d52062d7-4902-40db-97d8-7310b8fd1152"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get blockchain by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/blockchains/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"blockchains",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "27e724b3-958c-4e4a-b5bb-728863d0957e"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "513"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"201-SIIg6DeH6mnV5H/Z1l+/Rj26S2g\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 May 2025 22:31:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Blockchain retrieved successfully\",\n    \"data\": {\n        \"id\": \"7ceb9d3f-4f47-4b2a-b163-0f711209a287\",\n        \"blockchainId\": \"27e724b3-958c-4e4a-b5bb-728863d0957e\",\n        \"name\": \"Polygon Mainnet\",\n        \"chainId\": 137,\n        \"rpcUrl\": \"https://polygon-rpc.com\",\n        \"contractAddress\": \"0xbD6C7B0d2f68c2b7805d88388319cfB6EcB50eA9\",\n        \"blockExplorer\": \"https://polygonscan.com\",\n        \"nativeCurrency\": \"POL\",\n        \"symbol\": \"POL\",\n        \"decimals\": 18,\n        \"isActive\": true,\n        \"scanEnabled\": true,\n        \"createdAt\": \"2025-05-25T19:00:20.978Z\",\n        \"updatedAt\": \"2025-05-25T19:00:24.630Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Toggle isActive",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isActive\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/blockchains/:id/toggle",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"blockchains",
+								":id",
+								"toggle"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "27e724b3-958c-4e4a-b5bb-728863d0957e"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Toggle isActive",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"isActive\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/blockchains/:id/toggle",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"blockchains",
+										":id",
+										"toggle"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "27e724b3-958c-4e4a-b5bb-728863d0957e"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "247"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f7-x5ZqGihhdBg67o3yN330cq3M35A\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 May 2025 22:33:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Blockchain enabled successfully\",\n    \"data\": {\n        \"id\": \"d650d72f-2689-420d-9d7b-209e97597333\",\n        \"blockchainId\": \"27e724b3-958c-4e4a-b5bb-728863d0957e\",\n        \"name\": \"Polygon Mainnet\",\n        \"isActive\": true,\n        \"updatedAt\": \"2025-05-26T22:33:31.382Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Toggle scanning",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"scanEnabled\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/blockchains/:id/scanning",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"blockchains",
+								":id",
+								"scanning"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "27e724b3-958c-4e4a-b5bb-728863d0957e"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Toggle scanning",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"scanEnabled\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/blockchains/:id/scanning",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"blockchains",
+										":id",
+										"scanning"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "27e724b3-958c-4e4a-b5bb-728863d0957e"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "255"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ff-8Q8qdv5v5bXF+153io1vdoC9dps\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 May 2025 22:33:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Scanning enabled for Polygon Mainnet\",\n    \"data\": {\n        \"id\": \"d650d72f-2689-420d-9d7b-209e97597333\",\n        \"blockchainId\": \"27e724b3-958c-4e4a-b5bb-728863d0957e\",\n        \"name\": \"Polygon Mainnet\",\n        \"scanEnabled\": true,\n        \"updatedAt\": \"2025-05-26T22:33:36.836Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete blockchain by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/blockchains/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"blockchains",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "27e724b3-958c-4e4a-b5bb-728863d0957e"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete blockchain by id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/blockchains/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"blockchains",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "27e724b3-958c-4e4a-b5bb-728863d0957e"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "247"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f7-7GgFA5u0CezdH48mU5Hcu+sFUP0\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 May 2025 22:33:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Blockchain Polygon Mainnet deleted successfully\",\n    \"data\": {\n        \"id\": \"7ceb9d3f-4f47-4b2a-b163-0f711209a287\",\n        \"blockchainId\": \"27e724b3-958c-4e4a-b5bb-728863d0957e\",\n        \"name\": \"Polygon Mainnet\",\n        \"deletedAt\": \"2025-05-26T22:33:27.794Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Events",
+			"item": [
+				{
+					"name": "Get all integrator events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/events/:integrator",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"events",
+								":integrator"
+							],
+							"variable": [
+								{
+									"key": "integrator",
+									"value": "0xe165726003c42edde42615ce591e25665a6a40a4"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get all integrator events",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/events/:integrator",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"events",
+										":integrator"
+									],
+									"query": [
+										{
+											"key": "sortOrder",
+											"value": "desc",
+											"disabled": true
+										},
+										{
+											"key": "token",
+											"value": "0x2791bca1f2de4661ed88a30c99a7a9449aa84175",
+											"disabled": true
+										},
+										{
+											"key": "chainId",
+											"value": "sdada134",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "2",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "integrator",
+											"value": "0xe165726003c42edde42615ce591e25665a6a40a4"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "9770"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"262a-1ATONE46elKrcf5L1FIDPuwPJJc\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 May 2025 16:47:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Events retrieved successfully\",\n    \"data\": {\n        \"events\": [\n            {\n                \"id\": \"683369b20b8aa771798fdb54\",\n                \"integrator\": \"0xe165726003c42edde42615ce591e25665a6a40a4\",\n                \"token\": \"0x2791bca1f2de4661ed88a30c99a7a9449aa84174\",\n                \"integratorFee\": \"78859\",\n                \"lifiFee\": \"14786\",\n                \"integratorFeeHex\": \"0x01340b\",\n                \"lifiFeeHex\": \"0x39c2\",\n                \"blockNumber\": 71954007,\n                \"transactionHash\": \"0xc1449b20979a82263dc72867324c7630323e38bf40411e28372ad04ea36dc6d6\",\n                \"logIndex\": 284,\n                \"chainId\": 137,\n                \"blockTimestamp\": \"2025-05-25T15:40:25.000Z\",\n                \"createdAt\": \"2025-05-25T19:04:18.274Z\",\n                \"updatedAt\": \"2025-05-25T19:04:18.274Z\"\n            },\n            {\n                \"id\": \"683369ad0b8aa771798fdb26\",\n                \"integrator\": \"0xe165726003c42edde42615ce591e25665a6a40a4\",\n                \"token\": \"0x7ceb23fd6bc0add59e62ac25578270cff1b9f619\",\n                \"integratorFee\": \"75360000000000\",\n                \"lifiFee\": \"14130000000000\",\n                \"integratorFeeHex\": \"0x448a1e07c000\",\n                \"lifiFeeHex\": \"0x0cd9e5a17400\",\n                \"blockNumber\": 71953100,\n                \"transactionHash\": \"0x1f4f8e44c22e0ed91822ec9c5861494ac3bdd4b9bf19123b1c9eb4621b3c926c\",\n                \"logIndex\": 212,\n                \"chainId\": 137,\n                \"blockTimestamp\": \"2025-05-25T15:08:14.000Z\",\n                \"createdAt\": \"2025-05-25T19:04:13.687Z\",\n                \"updatedAt\": \"2025-05-25T19:04:13.687Z\"\n            },\n            {\n                \"id\": \"683369a40b8aa771798fdac4\",\n                \"integrator\": \"0xe165726003c42edde42615ce591e25665a6a40a4\",\n                \"token\": \"0x7ceb23fd6bc0add59e62ac25578270cff1b9f619\",\n                \"integratorFee\": \"68000000000000\",\n                \"lifiFee\": \"12750000000000\",\n                \"integratorFeeHex\": \"0x3dd87bd84000\",\n                \"lifiFeeHex\": \"0x0b9897388c00\",\n                \"blockNumber\": 71951350,\n                \"transactionHash\": \"0x23e289ff255846e8f1fa17abc35a7efacc988b36e16e913d93c8561ebf504924\",\n                \"logIndex\": 155,\n                \"chainId\": 137,\n                \"blockTimestamp\": \"2025-05-25T14:06:10.000Z\",\n                \"createdAt\": \"2025-05-25T19:04:04.343Z\",\n                \"updatedAt\": \"2025-05-25T19:04:04.343Z\"\n            },\n            {\n                \"id\": \"683369a10b8aa771798fda8e\",\n                \"integrator\": \"0xe165726003c42edde42615ce591e25665a6a40a4\",\n                \"token\": \"0xc2132d05d31c914a87c6611c10748aeb04b58e8f\",\n                \"integratorFee\": \"3999840\",\n                \"lifiFee\": \"749970\",\n                \"integratorFeeHex\": \"0x3d0860\",\n                \"lifiFeeHex\": \"0x0b7192\",\n                \"blockNumber\": 71950305,\n                \"transactionHash\": \"0xaf4d8edef5cd72b7f00c86bc750538ebd9e95e008ca8c42678d56c5d0e652073\",\n                \"logIndex\": 1086,\n                \"chainId\": 137,\n                \"blockTimestamp\": \"2025-05-25T13:29:07.000Z\",\n                \"createdAt\": \"2025-05-25T19:04:01.390Z\",\n                \"updatedAt\": \"2025-05-25T19:04:01.390Z\"\n            },\n            {\n                \"id\": \"6833699f0b8aa771798fda6e\",\n                \"integrator\": \"0xe165726003c42edde42615ce591e25665a6a40a4\",\n                \"token\": \"0x7aefff599570dec2f3dbbc2ace3cb1f8206749eb\",\n                \"integratorFee\": \"223407941040000000000\",\n                \"lifiFee\": \"41888988945000000000\",\n                \"integratorFeeHex\": \"0x0c1c6872b5ba9ce000\",\n                \"lifiFeeHex\": \"0x024553958212fd6a00\",\n                \"blockNumber\": 71949553,\n                \"transactionHash\": \"0xa9c305a54b5aec9e45f8f124cfabf1a831d2714254e1e3de26874bc3b544eb4f\",\n                \"logIndex\": 551,\n                \"chainId\": 137,\n                \"blockTimestamp\": \"2025-05-25T13:02:26.000Z\",\n                \"createdAt\": \"2025-05-25T19:03:59.718Z\",\n                \"updatedAt\": \"2025-05-25T19:03:59.718Z\"\n            },\n            {\n                \"id\": \"6833699a0b8aa771798fda3a\",\n                \"integrator\": \"0xe165726003c42edde42615ce591e25665a6a40a4\",\n                \"token\": \"0x0000000000000000000000000000000000000000\",\n                \"integratorFee\": \"1600000000000000000\",\n                \"lifiFee\": \"300000000000000000\",\n                \"integratorFeeHex\": \"0x16345785d8a00000\",\n                \"lifiFeeHex\": \"0x0429d069189e0000\",\n                \"blockNumber\": 71948617,\n                \"transactionHash\": \"0xf7e751be3d186687bf36f68f85a3dc057147156d18e8d549f5ce694d830cf7ad\",\n                \"logIndex\": 133,\n                \"chainId\": 137,\n                \"blockTimestamp\": \"2025-05-25T12:29:16.000Z\",\n                \"createdAt\": \"2025-05-25T19:03:54.744Z\",\n                \"updatedAt\": \"2025-05-25T19:03:54.744Z\"\n            },\n            {\n                \"id\": \"683369930b8aa771798fd9fa\",\n                \"integrator\": \"0xe165726003c42edde42615ce591e25665a6a40a4\",\n                \"token\": \"0x0000000000000000000000000000000000000000\",\n                \"integratorFee\": \"2760000000000000000\",\n                \"lifiFee\": \"517500000000000000\",\n                \"integratorFeeHex\": \"0x264d7d607c140000\",\n                \"lifiFeeHex\": \"0x072e87821743c000\",\n                \"blockNumber\": 71947073,\n                \"transactionHash\": \"0x633d523aa634f596aa53e498386ae1250dc4f1f9a54ab59365b57235609a9eb3\",\n                \"logIndex\": 353,\n                \"chainId\": 137,\n                \"blockTimestamp\": \"2025-05-25T11:34:33.000Z\",\n                \"createdAt\": \"2025-05-25T19:03:47.991Z\",\n                \"updatedAt\": \"2025-05-25T19:03:47.991Z\"\n            },\n            {\n                \"id\": \"683369910b8aa771798fd9e0\",\n                \"integrator\": \"0xe165726003c42edde42615ce591e25665a6a40a4\",\n                \"token\": \"0x0000000000000000000000000000000000000000\",\n                \"integratorFee\": \"8802542320000000000\",\n                \"lifiFee\": \"1650476685000000000\",\n                \"integratorFeeHex\": \"0x7a28e99a27f16000\",\n                \"lifiFeeHex\": \"0x16e7abcce77d4200\",\n                \"blockNumber\": 71946344,\n                \"transactionHash\": \"0xf6d023e8299e230d17c5aa08e301cd323120278e13da91e897509537c47974a9\",\n                \"logIndex\": 239,\n                \"chainId\": 137,\n                \"blockTimestamp\": \"2025-05-25T11:08:41.000Z\",\n                \"createdAt\": \"2025-05-25T19:03:45.424Z\",\n                \"updatedAt\": \"2025-05-25T19:03:45.424Z\"\n            },\n            {\n                \"id\": \"683369760b8aa771798fd876\",\n                \"integrator\": \"0xe165726003c42edde42615ce591e25665a6a40a4\",\n                \"token\": \"0x6f8f243fce2d3cdb1658ac4da6ab947970106599\",\n                \"integratorFee\": \"586652111008\",\n                \"lifiFee\": \"109997270814\",\n                \"integratorFeeHex\": \"0x889730d0a0\",\n                \"lifiFeeHex\": \"0x199c59271e\",\n                \"blockNumber\": 71934092,\n                \"transactionHash\": \"0x592aa900e64de650dec487a96fde3d518f00c24e3cefe3009e2581fe3479d394\",\n                \"logIndex\": 165,\n                \"chainId\": 137,\n                \"blockTimestamp\": \"2025-05-25T03:49:45.000Z\",\n                \"createdAt\": \"2025-05-25T19:03:18.442Z\",\n                \"updatedAt\": \"2025-05-25T19:03:18.442Z\"\n            },\n            {\n                \"id\": \"683369740b8aa771798fd85c\",\n                \"integrator\": \"0xe165726003c42edde42615ce591e25665a6a40a4\",\n                \"token\": \"0x7aefff599570dec2f3dbbc2ace3cb1f8206749eb\",\n                \"integratorFee\": \"251272085040000000000\",\n                \"lifiFee\": \"47113515945000000000\",\n                \"integratorFeeHex\": \"0x0d9f19c60c1cf1e000\",\n                \"lifiFeeHex\": \"0x028dd4d522456d5a00\",\n                \"blockNumber\": 71933036,\n                \"transactionHash\": \"0x731af72353b14c94730c752922a438a3d1aed38e37e6d4380b7b784c7856a6ab\",\n                \"logIndex\": 205,\n                \"chainId\": 137,\n                \"blockTimestamp\": \"2025-05-25T03:12:19.000Z\",\n                \"createdAt\": \"2025-05-25T19:03:16.061Z\",\n                \"updatedAt\": \"2025-05-25T19:03:16.061Z\"\n            },\n            {\n                \"id\": \"683369710b8aa771798fd848\",\n                \"integrator\": \"0xe165726003c42edde42615ce591e25665a6a40a4\",\n                \"token\": \"0xc2132d05d31c914a87c6611c10748aeb04b58e8f\",\n                \"integratorFee\": \"119182\",\n                \"lifiFee\": \"22346\",\n                \"integratorFeeHex\": \"0x01d18e\",\n                \"lifiFeeHex\": \"0x574a\",\n                \"blockNumber\": 71932626,\n                \"transactionHash\": \"0xbb9a98c0f5497e2923182dbf6c747984d2693b5e5ea39aaacbabb1e5c293854a\",\n                \"logIndex\": 313,\n                \"chainId\": 137,\n                \"blockTimestamp\": \"2025-05-25T02:57:49.000Z\",\n                \"createdAt\": \"2025-05-25T19:03:13.557Z\",\n                \"updatedAt\": \"2025-05-25T19:03:13.557Z\"\n            },\n            {\n                \"id\": \"683369710b8aa771798fd846\",\n                \"integrator\": \"0xe165726003c42edde42615ce591e25665a6a40a4\",\n                \"token\": \"0xa649325aa7c5093d12d6f98eb4378deae68ce23f\",\n                \"integratorFee\": \"2517120000000000\",\n                \"lifiFee\": \"471960000000000\",\n                \"integratorFeeHex\": \"0x08f14eab750000\",\n                \"lifiFeeHex\": \"0x01ad3ec025f000\",\n                \"blockNumber\": 71932560,\n                \"transactionHash\": \"0x71f212d4ba0ed889c3f882c09d937622e3494da3ab820cdb90b0bb273e6f8e4e\",\n                \"logIndex\": 284,\n                \"chainId\": 137,\n                \"blockTimestamp\": \"2025-05-25T02:55:29.000Z\",\n                \"createdAt\": \"2025-05-25T19:03:13.356Z\",\n                \"updatedAt\": \"2025-05-25T19:03:13.356Z\"\n            },\n            {\n                \"id\": \"683369700b8aa771798fd83c\",\n                \"integrator\": \"0xe165726003c42edde42615ce591e25665a6a40a4\",\n                \"token\": \"0x0000000000000000000000000000000000000000\",\n                \"integratorFee\": \"526988960000000000\",\n                \"lifiFee\": \"98810430000000000\",\n                \"integratorFeeHex\": \"0x07503daac15a4000\",\n                \"lifiFeeHex\": \"0x015f0b900440ec00\",\n                \"blockNumber\": 71932422,\n                \"transactionHash\": \"0x9dabb6ea6d7b4b961aed479bdb71f268e36c3b39d499a60c0047e8155e70fe92\",\n                \"logIndex\": 288,\n                \"chainId\": 137,\n                \"blockTimestamp\": \"2025-05-25T02:50:35.000Z\",\n                \"createdAt\": \"2025-05-25T19:03:12.332Z\",\n                \"updatedAt\": \"2025-05-25T19:03:12.332Z\"\n            },\n            {\n                \"id\": \"6833696e0b8aa771798fd822\",\n                \"integrator\": \"0xe165726003c42edde42615ce591e25665a6a40a4\",\n                \"token\": \"0x7ceb23fd6bc0add59e62ac25578270cff1b9f619\",\n                \"integratorFee\": \"193440000000000\",\n                \"lifiFee\": \"36270000000000\",\n                \"integratorFeeHex\": \"0xafeec27c4000\",\n                \"lifiFeeHex\": \"0x20fcc4774c00\",\n                \"blockNumber\": 71931029,\n                \"transactionHash\": \"0x4634bd42108e9df7bf12fb993c4688be6b4c76d35d544450e3f548902747463f\",\n                \"logIndex\": 595,\n                \"chainId\": 137,\n                \"blockTimestamp\": \"2025-05-25T02:01:15.000Z\",\n                \"createdAt\": \"2025-05-25T19:03:10.406Z\",\n                \"updatedAt\": \"2025-05-25T19:03:10.406Z\"\n            },\n            {\n                \"id\": \"6833696c0b8aa771798fd808\",\n                \"integrator\": \"0xe165726003c42edde42615ce591e25665a6a40a4\",\n                \"token\": \"0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6\",\n                \"integratorFee\": \"312\",\n                \"lifiFee\": \"58\",\n                \"integratorFeeHex\": \"0x0138\",\n                \"lifiFeeHex\": \"0x3a\",\n                \"blockNumber\": 71930470,\n                \"transactionHash\": \"0x7f4d8b04c139b95f47486864c29cdbc3b01004be00814a0369a3bae4915a60f5\",\n                \"logIndex\": 124,\n                \"chainId\": 137,\n                \"blockTimestamp\": \"2025-05-25T01:41:27.000Z\",\n                \"createdAt\": \"2025-05-25T19:03:08.888Z\",\n                \"updatedAt\": \"2025-05-25T19:03:08.888Z\"\n            },\n            {\n                \"id\": \"6833696c0b8aa771798fd806\",\n                \"integrator\": \"0xe165726003c42edde42615ce591e25665a6a40a4\",\n                \"token\": \"0x7ceb23fd6bc0add59e62ac25578270cff1b9f619\",\n                \"integratorFee\": \"258080000000000\",\n                \"lifiFee\": \"48390000000000\",\n                \"integratorFeeHex\": \"0xeab8eeb94000\",\n                \"lifiFeeHex\": \"0x2c02acc2bc00\",\n                \"blockNumber\": 71930404,\n                \"transactionHash\": \"0x8bc5d9f438f0805ef5e4f48eb07e524a2a7bb3ea402f0237e99660887bcee010\",\n                \"logIndex\": 121,\n                \"chainId\": 137,\n                \"blockTimestamp\": \"2025-05-25T01:39:07.000Z\",\n                \"createdAt\": \"2025-05-25T19:03:08.763Z\",\n                \"updatedAt\": \"2025-05-25T19:03:08.763Z\"\n            },\n            {\n                \"id\": \"6833696b0b8aa771798fd7f4\",\n                \"integrator\": \"0xe165726003c42edde42615ce591e25665a6a40a4\",\n                \"token\": \"0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270\",\n                \"integratorFee\": \"65201120000000000\",\n                \"lifiFee\": \"12225210000000000\",\n                \"integratorFeeHex\": \"0xe7a412bc8ec000\",\n                \"lifiFeeHex\": \"0x2b6ec3835ac400\",\n                \"blockNumber\": 71930149,\n                \"transactionHash\": \"0xc1e8002a3bdc95f4c52bbbdffd893aa963e7cc990c049521884512ead20e9567\",\n                \"logIndex\": 133,\n                \"chainId\": 137,\n                \"blockTimestamp\": \"2025-05-25T01:30:05.000Z\",\n                \"createdAt\": \"2025-05-25T19:03:07.893Z\",\n                \"updatedAt\": \"2025-05-25T19:03:07.893Z\"\n            },\n            {\n                \"id\": \"683369470b8aa771798fd602\",\n                \"integrator\": \"0xe165726003c42edde42615ce591e25665a6a40a4\",\n                \"token\": \"0x7aefff599570dec2f3dbbc2ace3cb1f8206749eb\",\n                \"integratorFee\": \"560656000000000000000\",\n                \"lifiFee\": \"105123000000000000000\",\n                \"integratorFeeHex\": \"0x1e64aa3d8467680000\",\n                \"lifiFeeHex\": \"0x05b2dfeb88d3638000\",\n                \"blockNumber\": 71918104,\n                \"transactionHash\": \"0x1fcf6045a7d1660517887dd0add26f9f7463e47074b11ebd18eeff3e92d59ec4\",\n                \"logIndex\": 71,\n                \"chainId\": 137,\n                \"blockTimestamp\": \"2025-05-24T18:19:15.000Z\",\n                \"createdAt\": \"2025-05-25T19:02:31.974Z\",\n                \"updatedAt\": \"2025-05-25T19:02:31.974Z\"\n            }\n        ],\n        \"pagination\": {\n            \"page\": 1,\n            \"limit\": 50,\n            \"total\": 18,\n            \"totalPages\": 1,\n            \"hasNext\": false,\n            \"hasPrev\": false\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get all integrators debug",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/events/:integrator",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"events",
+								":integrator"
+							],
+							"variable": [
+								{
+									"key": "integrator",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get all integrators debug",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/events/debug/integrators",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"events",
+										"debug",
+										"integrators"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2214"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8a6-htMWURcMaq2lBXM5Gost+pYpLiU\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 May 2025 10:24:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Integrators retrieved successfully\",\n    \"data\": {\n        \"integrators\": [\n            \"0x0532307f8660e0ff3f493cda633f5028b3b286a4\",\n            \"0x09a5cbbfbee517163d369a04ad013a21ed60322d\",\n            \"0x1ac3ef0ecf4e0ed23d62cab448f3169064230624\",\n            \"0x1bcc58d165e5374d7b492b21c0a572fd61c0c2a0\",\n            \"0x242ba6d68ffeb4a098b591b32d370f973ff882b7\",\n            \"0x29484cfe571d304bcbc27d9c00450062062cb871\",\n            \"0x2d1c5382748559ba877246db753cacbc54d5b9b4\",\n            \"0x37e945ed26b17a631d7df3382c2808cc1c7f07ed\",\n            \"0x38d898bdc6c123a651d9c6b576f4f8ccbd0d4648\",\n            \"0x39008584ef5a94fba2d6d27669429ab47c1fc8e0\",\n            \"0x40e1147c59e36b6a84626fa588ce5f7ff196ce4b\",\n            \"0x4ce053dfe58541e08f149c1050eb3df09d7a40bc\",\n            \"0x4dd665c59007fd825d98fddabf7759f650f2ace0\",\n            \"0x60bfac7318e576a535ce8ea3bfe0a45a803bfa0b\",\n            \"0x6a5aaccf71291b5e681eaaf2b2ceb9c89e97b353\",\n            \"0x6f6426a9b93a7567fcccbfe5d0d6f26c1085999b\",\n            \"0x7225b33c16fba2dcb38b0acbcc562a72ef576a6b\",\n            \"0x776f31d18546128bcc8b4fc61b94e275e174b923\",\n            \"0x7c9a57637584ce4257b9df11316cda3a915490cc\",\n            \"0x7e83aa92e04de879eee1e0b6509c84d0db4d533a\",\n            \"0x8b4371e90ec7d47e66fc551bb4b42e26f534960b\",\n            \"0x916298ab0227854a160606703f43fca682e6cc32\",\n            \"0x9d37c872754deb5fa7f9663091afd9ff823459f7\",\n            \"0x9e2d651db0c4ae178545536828b042930a3afce4\",\n            \"0xa34617a9579ab4f85772c4940f2fcf90555e5e56\",\n            \"0xa39c999715276c9cbb1008d87884b85117260cbc\",\n            \"0xa756ff534af05105012034b53990b264ac5efe18\",\n            \"0xaa86522fd61537c0fbd125f5a4e16cba3e24729f\",\n            \"0xade178f0bdaad9b25adc44ca7e3fe0bc47049ec2\",\n            \"0xaebf22d90e6e0948e0f4ecda5612aea4d34c1c8a\",\n            \"0xb039ef05f428e79d2bacbab13d59d572d64fe379\",\n            \"0xb3d1631fd548ed3353c11d7c83d56be7c9f299e7\",\n            \"0xb563d0dd1ebbdaed8d2d6afc767981aa53d56605\",\n            \"0xb9c0de368bece5e76b52545a8e377a4c118f597b\",\n            \"0xbfc330020e3267cea008718f1712f1da7f0d32a9\",\n            \"0xc050079dcbfb586bafd4641edbb2489383960bfd\",\n            \"0xc4f9da423abc6927997838153ea18f1abf9d5a98\",\n            \"0xc7dca829cee073569c833cb099a006bd989b243d\",\n            \"0xcacf6089ae5e487658168c66a5b54b28a73b9aea\",\n            \"0xd8da6bf26964af9d7eed9e03e53415d37aa96045\",\n            \"0xe165726003c42edde42615ce591e25665a6a40a4\",\n            \"0xe258a66329085e04c742bbdcd329e6b5b0e0ab45\",\n            \"0xe405c31032054ccebe1a94a4b65b0c510537dfae\",\n            \"0xe85c9297d1f55bec2b31cd33b9b3aa66fd0fa186\",\n            \"0xed8ab4d469020d74ba7b42bbfb83403d0c41e954\",\n            \"0xf5ba3507df4e01a9ed6100b4d5671e346bf5443f\",\n            \"0xf9a7be89dbfe37ac78f3631e94d556643bb9e945\"\n        ],\n        \"total\": 47\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"health"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "74"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4a-LcuYG9gCiqVfnkxCp2MziN7ko6w\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 24 May 2025 23:11:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\",\n    \"timestamp\": \"2025-05-24T23:11:47.709Z\",\n    \"uptime\": 37.9450638\n}"
+				}
+			]
+		},
+		{
+			"name": "Docs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	]
+}

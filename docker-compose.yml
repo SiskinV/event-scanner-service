@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:7.0
+    container_name: mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: lifi-db
+    volumes:
+      - mongodb_data:/data/db
+
+  # Add Redis service
+  redis:
+    image: redis:7-alpine
+    container_name: event-scanner-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+
+volumes:
+  mongodb_data:
+  redis_data:
+    driver: local
