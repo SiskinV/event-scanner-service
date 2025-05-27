@@ -36,7 +36,76 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Start scanner",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"chainId\": 137\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/scanner/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"scanner",
+										"start"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "126"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7e-vscqg6G6VwlKwLa+nanLtySJuLE\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 May 2025 17:11:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Event scanner started for chain 137\",\n    \"data\": {\n        \"chainId\": 137,\n        \"startedAt\": \"2025-05-27T17:11:07.941Z\"\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "Stop scanner",
@@ -66,28 +135,76 @@
 							]
 						}
 					},
-					"response": []
-				},
-				{
-					"name": "Get status of scanners",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/api/scanner/status",
-							"protocol": "http",
-							"host": [
-								"localhost"
+					"response": [
+						{
+							"name": "Stop scanner",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"chainId\": 137\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/scanner/stop",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"scanner",
+										"stop"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "126"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7e-qkIl2PK48KMGqTdiTTFFB5cVDxM\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 May 2025 13:19:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
 							],
-							"port": "3000",
-							"path": [
-								"api",
-								"scanner",
-								"status"
-							]
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Event scanner stopped for chain 137\",\n    \"data\": {\n        \"chainId\": 137,\n        \"stoppedAt\": \"2025-05-27T13:19:34.648Z\"\n    }\n}"
 						}
-					},
-					"response": []
+					]
 				},
 				{
 					"name": "Scan block range",
@@ -96,7 +213,76 @@
 						"header": [],
 						"url": null
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Scan block range",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"chainId\": 137,\r\n    \"fromBlock\": 71917187,\r\n    \"toBlock\": 71917287\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/scanner/scan-range",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"scanner",
+										"scan-range"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "213"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d5-xUlBpLdxBMSvB+MjHnNfDavG+qQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 May 2025 19:00:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully scanned blocks 71917187 to 71917287 for chain 137\",\n    \"data\": {\n        \"chainId\": 137,\n        \"fromBlock\": 71917187,\n        \"toBlock\": 71917287,\n        \"blocksScanned\": 100,\n        \"scannedAt\": \"2025-05-25T19:00:36.330Z\"\n    }\n}"
+						}
+					]
 				}
 			]
 		},

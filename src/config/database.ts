@@ -11,11 +11,6 @@ export const connectDB = async () => {
     await mongoose.connect(MONGODB_URI, {
       dbName: DB_NAME,
     });
-    console.log('Connected to MongoDB via Typegoose', mongoose.connection.name);
-    console.log(
-      'Collections in current DB:',
-      await mongoose?.connection?.db?.listCollections().toArray()
-    );
   } catch (error) {
     console.error('Error connecting to MongoDB:', error);
     process.exit(1);
